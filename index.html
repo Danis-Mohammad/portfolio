@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body class="stack-scroll-page">
 
     <!--================ LOADER ================-->
 
@@ -401,7 +401,7 @@
 
     <div class="featured-title" data-aos="fade-right">
 
-        <span>🚀 Featured Project</span>
+        <span>🚀 Major Projects</span>
 
     </div>
 
@@ -457,6 +457,67 @@
                 </a>
 
                 <a href="https://github.com/Danis-Mohammad/EXAM-Repository-System"
+                    class="github"
+                    target="_blank">
+
+                    <i class="fab fa-github"></i>
+
+                    Source Code
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SECOND MAJOR PROJECT ================= -->
+
+    <div class="featured-project" data-aos="zoom-in">
+
+        <div class="featured-image">
+
+            <img src="assets/projects/ai-learning-platform.png"
+                alt="Personalized AI Learning Platform">
+
+        </div>
+
+        <div class="featured-content">
+
+            <h2>Personalized AI Learning Platform</h2>
+
+            <p>
+                An AI-powered adaptive learning platform that analyzes
+                student performance, identifies weak topics, predicts
+                future performance and recommends personalized questions
+                and learning paths.
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Flask</span>
+                <span>XGBoost</span>
+                <span>Scikit-learn</span>
+                <span>Pandas</span>
+                <span>Machine Learning</span>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="https://personalized-ai-learning-platform.onrender.com/"
+                    class="live"
+                    target="_blank">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Live Demo
+
+                </a>
+
+                <a href="https://github.com/Danis-Mohammad/Personalized_AI_Learning_Platform"
                     class="github"
                     target="_blank">
 
@@ -1031,8 +1092,9 @@
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- JavaScript -->
-
+    <!-- GSAP + ScrollTrigger: pinned fade/stack scroll effect -->
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -8,7 +8,7 @@
     padding:0;
     box-sizing:border-box;
     font-family:"Poppins",sans-serif;
-    scroll-behavior:smooth;
+    scroll-behavior:auto;
 }
 
 body{
@@ -287,6 +287,8 @@ body::after{
 
 .hero{
 
+    background:#07111f;
+
     min-height:100vh;
 
     display:flex;
@@ -471,6 +473,8 @@ body::after{
 
 .about{
 
+    background:#07111f;
+
     padding:100px 8%;
 
 }
@@ -603,6 +607,8 @@ SKILLS
 
 .skills{
 
+    background:#07111f;
+
     padding:120px 8%;
 
 }
@@ -710,6 +716,8 @@ PROJECTS
 
 .projects{
 
+    background:#07111f;
+
     padding:120px 8%;
 
 }
@@ -764,6 +772,8 @@ EDUCATION
 =========================*/
 
 .education{
+
+    background:#07111f;
 
     padding:120px 8%;
 
@@ -919,6 +929,8 @@ STATS
 =========================*/
 
 .stats{
+
+    background:#07111f;
 
     padding:120px 8%;
 
@@ -1211,6 +1223,8 @@ CONTACT
 
 .contact{
 
+    background:#07111f;
+
     padding:120px 8%;
 
 }
@@ -1445,6 +1459,8 @@ CERTIFICATES
 
 .certificates{
 
+    background:#07111f;
+
     padding:120px 8%;
 
 }
@@ -1567,6 +1583,53 @@ CERTIFICATES
 
     box-shadow:0 10px 25px rgba(0,198,255,.4);
 
+}
+
+/*=========================================
+PINNED STACK / FADE SCROLL
+=========================================*/
+
+/*
+   GSAP handles the actual pinning and scroll-linked animation.
+   These rules make the layers visually clean while sections overlap.
+*/
+.is-stack-panel{
+    position:relative;
+    transform-origin:center center;
+    will-change:transform, opacity, filter;
+    backface-visibility:hidden;
+}
+
+.is-stack-panel .section-title,
+.is-stack-panel .hero-text,
+.is-stack-panel .hero-image,
+.is-stack-panel .about-container,
+.is-stack-panel .education-container,
+.is-stack-panel .skills-grid,
+.is-stack-panel .featured-title,
+.is-stack-panel .featured-project,
+.is-stack-panel .project-grid,
+.is-stack-panel .certificate-grid,
+.is-stack-panel .stats-container,
+.is-stack-panel .contact-grid{
+    will-change:transform, opacity;
+}
+
+/* Keep the section itself opaque so the next panel cleanly covers it. */
+.is-stack-panel::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* Disable stacking on touch/mobile layouts for reliable natural scrolling. */
+@media (max-width:768px){
+    .is-stack-panel{
+        transform:none;
+        filter:none;
+    }
 }
 
 /*=========================================
@@ -2001,4 +2064,19 @@ FEATURED PROJECT
 
     transform:translateY(-5px);
 
+}
+
+/* ================= APPLE STYLE SCROLL ================= */
+
+body > section[id] {
+    transform-origin: center center;
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    body > section[id] {
+        filter: none !important;
+        transform: none !important;
+    }
 }
